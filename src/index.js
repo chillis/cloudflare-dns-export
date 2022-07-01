@@ -49,7 +49,7 @@ async function main() {
       owner: NAME.split("/")[0],
       repo: NAME.split("/")[1],
       message: `New DNS backup at ${getTime()}`,
-      path: `${FOLDER}/${PREFIX} - ${getTime()}.txt`,
+      path: `${FOLDER}/${PREFIX}.txt`,
       content: encode(data),
     });
     console.log("Uploaded");
