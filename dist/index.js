@@ -35232,7 +35232,7 @@
           owner: NAME.split("/")[0],
           repo: NAME.split("/")[1],
           message: `New DNS backup at ${getTime()}`,
-          path: `${getTime()} - ${FOLDER}/${PREFIX}.txt`,
+          path: `${FOLDER}/${getTime()} - ${PREFIX}.txt`,
           content: encode(data),
         });
         console.log("Uploaded");
