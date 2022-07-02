@@ -25,7 +25,7 @@ async function main() {
 
   function getTime() {
     const time = now.getTime() + now.getTimezoneOffset() * 60000;
-    const name = `${format(time, "dd-MM-yyyy")} - ${format(time, "HH-mm-ss")}`;
+    const name = `${format(time, "yyyy-MM-dd")} - ${format(time, "HH-mm-ss")}`;
 
     return name;
   }
@@ -49,7 +49,7 @@ async function main() {
       owner: NAME.split("/")[0],
       repo: NAME.split("/")[1],
       message: `New DNS backup at ${getTime()}`,
-      path: `${FOLDER}/${PREFIX}.txt`,
+      path: `${getTime()} - ${FOLDER}/${PREFIX}.txt`,
       content: encode(data),
     });
     console.log("Uploaded");

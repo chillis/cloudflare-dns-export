@@ -35205,7 +35205,7 @@
 
       function getTime() {
         const time = now.getTime() + now.getTimezoneOffset() * 60000;
-        const name = `${format(time, "dd-MM-yyyy")} - ${format(
+        const name = `${format(time, "yyyy-MM-dd")} - ${format(
           time,
           "HH-mm-ss"
         )}`;
@@ -35232,7 +35232,7 @@
           owner: NAME.split("/")[0],
           repo: NAME.split("/")[1],
           message: `New DNS backup at ${getTime()}`,
-          path: `${FOLDER}/${PREFIX}.txt`,
+          path: `${getTime()} - ${FOLDER}/${PREFIX}.txt`,
           content: encode(data),
         });
         console.log("Uploaded");
